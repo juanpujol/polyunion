@@ -1,10 +1,12 @@
 import polyunion from './index';
-import * as turf from '@turf/turf';
 import { describe, expect, it } from 'vitest';
+import { polygon } from '@turf/helpers';
+
+import type { FeatureCollection, Polygon } from '@turf/helpers';
 
 describe('polyunion function', () => {
 	it('handles an empty feature collection', () => {
-		const featureCollection: turf.FeatureCollection<turf.Polygon> = {
+		const featureCollection: FeatureCollection<Polygon> = {
 			type: 'FeatureCollection',
 			features: []
 		};
@@ -14,10 +16,10 @@ describe('polyunion function', () => {
 	});
 
 	it('handles a single feature', () => {
-		const featureCollection: turf.FeatureCollection<turf.Polygon> = {
+		const featureCollection: FeatureCollection<Polygon> = {
 			type: 'FeatureCollection',
 			features: [
-				turf.polygon([
+				polygon([
 					[
 						[0, 0],
 						[0, 1],
@@ -44,10 +46,10 @@ describe('polyunion function', () => {
 	});
 
 	it('handles multiple non-overlapping features', () => {
-		const featureCollection: turf.FeatureCollection<turf.Polygon> = {
+		const featureCollection: FeatureCollection<Polygon> = {
 			type: 'FeatureCollection',
 			features: [
-				turf.polygon([
+				polygon([
 					[
 						[0, 0],
 						[0, 1],
@@ -56,7 +58,7 @@ describe('polyunion function', () => {
 						[0, 0]
 					]
 				]),
-				turf.polygon([
+				polygon([
 					[
 						[2, 0],
 						[2, 1],
@@ -65,7 +67,7 @@ describe('polyunion function', () => {
 						[2, 0]
 					]
 				]),
-				turf.polygon([
+				polygon([
 					[
 						[4, 0],
 						[4, 1],
@@ -82,10 +84,10 @@ describe('polyunion function', () => {
 	});
 
 	it('handles multiple overlapping features', () => {
-		const featureCollection: turf.FeatureCollection<turf.Polygon> = {
+		const featureCollection: FeatureCollection<Polygon> = {
 			type: 'FeatureCollection',
 			features: [
-				turf.polygon([
+				polygon([
 					[
 						[0, 0],
 						[0, 1],
@@ -94,7 +96,7 @@ describe('polyunion function', () => {
 						[0, 0]
 					]
 				]),
-				turf.polygon([
+				polygon([
 					[
 						[0.5, 0.5],
 						[0.5, 1.5],
@@ -103,7 +105,7 @@ describe('polyunion function', () => {
 						[0.5, 0.5]
 					]
 				]),
-				turf.polygon([
+				polygon([
 					[
 						[1, 0],
 						[1, 1],
