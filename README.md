@@ -1,6 +1,6 @@
 # PolyUnion
 
-A fast and efficient js utility function designed for merging multiple polygons within a GeoJSON FeatureCollection. It utilizes spatial indexing provided by rbush and the geospatial processing of Turf to achieve high performance.
+A fast and efficient js utility function designed for merging multiple polygons within a GeoJSON FeatureCollection. It utilizes spatial indexing provided by **[rbush](https://github.com/mourner/rbush)** and the geospatial processing of **[Turfjs](https://github.com/Turfjs/turf)** to achieve high performance.
 
 ## Performance
 
