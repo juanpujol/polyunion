@@ -1,6 +1,12 @@
 # PolyUnion
 
-A fast and efficient function designed for merging multiple polygons within a GeoJSON FeatureCollection. It utilizes spatial indexing provided by rbush and the geospatial processing of Turf to achieve high performance.
+A fast and efficient js utility function designed for merging multiple polygons within a GeoJSON FeatureCollection. It utilizes spatial indexing provided by rbush and the geospatial processing of Turf to achieve high performance.
+
+## Performance
+
+When attempting to merge approximately 1000 circle-shaped polygons using only @turf/union, it took approximately 25 seconds. In contrast, PolyUnion completed the same task in about 350 milliseconds.
+
+![example-01](./images/example-01.webp)
 
 ## Installation
 
@@ -47,9 +53,8 @@ console.log(mergedFeatureCollection);
 The function has 3 parameters:
 
 - `featureCollection` (required): A GeoJSON FeatureCollection containing polygons to merge.
-- `currentPass` (optional): The current pass number. This is used internally for recursive calls and should not be set manually.
-- `totalPasses` (optional): The total number of passes. This is used internally for recursive calls and should not be set manually.
+- `currentPass` (optional, default: 1): The current pass number. This is used internally for recursive calls and should not be set manually.
+- `totalPasses` (optional, default: 3): The total number of passes for internal use in recursive calls. This parameter should not be set manually. The larger the number of iterations, the better the results, but the function will run slower. It depends on the number of polygons being merged. For the case above, 3 passes worked grat.
 
-## Performance
+Feel free to adjust or expand upon this section as needed!
 
-I wanted to merge about 1000 circle shaped polygons and when I tried to do it just with @turf/union it took about 25 seconds. With PolyUnion it took about 350ms.
