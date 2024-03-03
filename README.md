@@ -54,5 +54,3 @@ The function has 2 parameters:
 
 - `featureCollection` (required): A GeoJSON FeatureCollection containing polygons to merge.
 - `totalPasses` (optional, defaults to 3): The total number of passes for internal use in recursive calls. The larger the number of iterations, the better the results, but the function will run slower. It depends on the number of polygons being merged. For the case in the picture above, 4 passes worked great.
-
-Feel free to adjust or expand upon this section as needed!

@@ -8,7 +8,8 @@
 		"mutipolygons",
 		"polyunion",
 		"rbush",
-		"tsup"
+		"tsup",
+		"turfjs"
 	],
 	"githubPullRequests.ignoredPullRequestBranches": ["develop"]
 }
