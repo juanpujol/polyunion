@@ -1,6 +1,6 @@
 {
 	"name": "polyunion",
-	"version": "0.0.2",
+	"version": "0.1.0",
 	"description": "A fast and efficient library for merging multiple polygons in a GeoJSON FeatureCollection",
 	"main": "./dist/index.js",
 	"module": "./dist/index.mjs",
@@ -11,6 +11,7 @@
 	"scripts": {
 		"build": "tsup",
 		"format": "prettier --write .",
+		"lint": "eslint --fix .",
 		"test": "vitest"
 	},
 	"keywords": [
@@ -21,24 +22,24 @@
 		"spatial",
 		"geospatial",
 		"rbush",
-		"turf",
+		"turfjs",
 		"performance"
 	],
 	"author": "juanpujol",
 	"license": "MIT",
 	"dependencies": {
 		"@turf/bbox": "^6.5.0",
-		"@turf/boolean-intersects": "^6.5.0",
 		"@turf/boolean-overlap": "^6.5.0",
-		"@turf/circle": "^6.5.0",
 		"@turf/helpers": "^6.5.0",
 		"@turf/intersect": "^6.5.0",
-		"@turf/invariant": "^6.5.0",
 		"@turf/union": "^6.5.0",
 		"rbush": "^3.0.1"
 	},
 	"devDependencies": {
 		"@types/rbush": "^3.0.3",
+		"@typescript-eslint/eslint-plugin": "^7.1.0",
+		"eslint": "^8.57.0",
+		"eslint-config-prettier": "^9.1.0",
 		"prettier": "^3.2.5",
 		"tsup": "^8.0.2",
 		"typescript": "^5.3.3",

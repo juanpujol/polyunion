@@ -2,6 +2,17 @@
 
 # PolyUnion Changelog
 
+## v0.1.0 (2024-03-03)
+
+The code is stable enough for use and I'm proud to release it as v0.1.0 🤣. Will improve along with more tests as needed.
+
+### Refactors & Improvements ✨
+
+- Removed some unnecessary dependencies
+- Added eslint
+- Implemented minification on build
+- Simplified function by removing unnecessary parameters
+
 ## v0.0.2 (2024-03-03)
 
 ### Refactors & Improvements ✨

@@ -2,7 +2,7 @@ name: Run unit tests
 
 on:
   push:
-    branches: [main]
+    branches: [develop, main]
   pull_request:
     branches: [develop, main]
 
