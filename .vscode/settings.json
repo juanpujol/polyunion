@@ -1,0 +1,14 @@
+{
+	"editor.formatOnSave": true,
+	"cSpell.words": [
+		"bbox",
+		"fbbox",
+		"geospatial",
+		"juanpujol",
+		"mutipolygons",
+		"polyunion",
+		"rbush",
+		"tsup"
+	],
+	"githubPullRequests.ignoredPullRequestBranches": ["develop"]
+}
