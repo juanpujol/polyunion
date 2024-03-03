@@ -60,8 +60,9 @@ function polyunionPass(
 	}
 
 	const tree = createSpatialIndex(fc.features);
+	const processed = new Set<number>();
+
 	let mergedFeatures: Feature<Polygon>[] = [];
-	let processed = new Set<number>();
 
 	fc.features.forEach((feature, index) => {
 		if (processed.has(index)) return; // Skip if already processed
