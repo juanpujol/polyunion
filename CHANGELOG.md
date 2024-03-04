@@ -2,6 +2,12 @@
 
 # PolyUnion Changelog
 
+## v0.1.1 (2024-03-04)
+
+### Fixes 🐞
+
+- Fix .npmignore to include only necessary files
+
 ## v0.1.0 (2024-03-03)
 
 The code is stable enough for use and I'm proud to release it as v0.1.0 🤣. Will improve along with more tests as needed.

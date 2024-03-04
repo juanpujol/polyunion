@@ -1,6 +1,6 @@
 {
 	"name": "polyunion",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "A fast and efficient library for merging multiple polygons in a GeoJSON FeatureCollection",
 	"main": "./dist/index.js",
 	"module": "./dist/index.mjs",
