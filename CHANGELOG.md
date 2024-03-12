@@ -2,6 +2,12 @@
 
 # PolyUnion Changelog
 
+## v0.1.2 (2024-03-12)
+
+### Fixes 🐞
+
+- Remove default export to fix import issues with cjs. Thank you https://github.com/AbraaoAlves
+
 ## v0.1.1 (2024-03-04)
 
 ### Fixes 🐞
