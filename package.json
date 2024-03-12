@@ -1,7 +1,8 @@
 {
 	"name": "polyunion",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "A fast and efficient library for merging multiple polygons in a GeoJSON FeatureCollection",
+	"type": "module",
 	"main": "./dist/index.js",
 	"module": "./dist/index.mjs",
 	"types": "./dist/index.d.ts",
@@ -37,7 +38,7 @@
 	},
 	"devDependencies": {
 		"@types/rbush": "^3.0.3",
-		"@typescript-eslint/eslint-plugin": "^7.1.0",
+		"@typescript-eslint/eslint-plugin": "^7.2.0",
 		"eslint": "^8.57.0",
 		"eslint-config-prettier": "^9.1.0",
 		"prettier": "^3.2.5",
