@@ -19,7 +19,7 @@ npm install polyunion
 ## Usage
 
 ```js
-import polyunion from 'polyunion';
+import { polyunion } from 'polyunion';
 
 // Example GeoJSON FeatureCollection input
 const features = {
@@ -53,4 +53,8 @@ console.log(mergedFeatureCollection);
 The function has 2 parameters:
 
 - `featureCollection` (required): A GeoJSON FeatureCollection containing polygons to merge.
-- `totalPasses` (optional, defaults to 3): The total number of passes for internal use in recursive calls. The larger the number of iterations, the better the results, but the function will run slower. It depends on the number of polygons being merged. For the case in the picture above, 4 passes worked great.
+- `totalPasses` (optional, defaults to 3): The total number of passes for recursive calls. Increasing the number of iterations can improve the results, but it will also prolong the execution time. It depends on the number of polygons being merged. For the case in the picture above, 4 passes worked great (350ms).
+
+## Credits
+
+I'm not smart enough to have created this from scratch. This took some back and forth with [ChatGPT](https://chat.openai.com) and I'm not ashamed to admit it. 😄

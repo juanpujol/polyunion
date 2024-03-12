@@ -42,7 +42,7 @@ function createSpatialIndex(features: Feature<Polygon>[]): RBush<RBushItem> {
  * @param {number} [totalPasses=3] - The total number of passes to perform. Defaults to 3.
  * @returns {FeatureCollection<Polygon>} - The merged feature collection.
  */
-function polyunion(
+export function polyunion(
 	fc: FeatureCollection<Polygon>,
 	totalPasses: number = 3
 ): FeatureCollection<Polygon> {
@@ -106,5 +106,3 @@ function polyunionPass(
 
 	return featureCollection(mergedFeatures);
 }
-
-export default polyunion;

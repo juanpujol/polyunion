@@ -1,4 +1,4 @@
-import polyunion from './index';
+import { polyunion } from './index';
 import { describe, expect, it } from 'vitest';
 import { polygon } from '@turf/helpers';
 
