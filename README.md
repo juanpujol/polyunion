@@ -19,7 +19,7 @@ npm install polyunion
 ## Usage
 
 ```js
-import polyunion from 'polyunion';
+import { polyunion } from 'polyunion';
 
 // Example GeoJSON FeatureCollection input
 const features = {
