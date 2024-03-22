@@ -7,4 +7,5 @@ node_modules/
 .eslintcache
 .env
 dist
+tests/output
 NOTES.md
