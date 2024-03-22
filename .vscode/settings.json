@@ -5,6 +5,7 @@
 		"fbbox",
 		"geospatial",
 		"juanpujol",
+		"radiusInKm",
 		"mutipolygons",
 		"polyunion",
 		"rbush",
