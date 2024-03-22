@@ -1,8 +1,8 @@
 # PolyUnion
 
-A fast and efficient js utility function designed for merging multiple polygons within a GeoJSON FeatureCollection. It utilizes spatial indexing provided by **[rbush](https://github.com/mourner/rbush)** and the geospatial processing of **[Turfjs](https://github.com/Turfjs/turf)** to achieve high performance.
+A fast and efficient Javascript utility function designed to mergE multiple polygons into a GeoJSON FeatureCollection. It utilizes spatial indexing provided by **[rbush](https://github.com/mourner/rbush)** and the geospatial processing of **[Turfjs](https://github.com/Turfjs/turf)** to achieve high performance.
 
-## Performance
+## How fast?
 
 When attempting to merge approximately 1000 circle-shaped polygons using only @turf/union, it took approximately 25 seconds. In contrast, PolyUnion completed the same task in about 350 milliseconds.
 
@@ -45,14 +45,14 @@ const features = {
 };
 
 // Merge polygons
-const mergedFeatureCollection = polyunion(features);
+const mergedFeatureCollection = polyunion(features, 2);
 
 console.log(mergedFeatureCollection);
 ```
 
 The function has 2 parameters:
 
-- `featureCollection` (required): A GeoJSON FeatureCollection containing polygons to merge.
+- `fc` (required): A GeoJSON FeatureCollection containing polygons to merge (make sure the polygons are valid).
 - `totalPasses` (optional, defaults to 3): The total number of passes for recursive calls. Increasing the number of iterations can improve the results, but it will also prolong the execution time. It depends on the number of polygons being merged. For the case in the picture above, 4 passes worked great (350ms).
 
 ## Credits
