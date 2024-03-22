@@ -6,7 +6,7 @@ import { data } from './fixtures/data.json';
 
 import type { FeatureCollection, Polygon } from '@turf/helpers';
 
-describe('polyunion function', () => {
+describe('polyunion: function', () => {
 	it('handles an empty feature collection', () => {
 		const featureCollection: FeatureCollection<Polygon> = {
 			type: 'FeatureCollection',
@@ -136,16 +136,17 @@ describe('polyunion function', () => {
 			]
 		]);
 	});
+});
 
+describe('polyunion: test cases', () => {
 	it.each([
-			0.1, 0.2, 0.3, 0.4, 0.5, 0.8, 0.9, 1, 1.1, 1.4, 1.5, 2, 2.2, 2.5, 3, 4,
-			5, 6, 7, 8
-		])('it should merge polygons with radius: %d and 24 steps', (radius) => {
-			const list = buildPolyCircle(radius, 24)(data);
-			const collection = featureCollection(list);
-			const result = polyunion(collection, 4);
+		0.1, 0.2, 0.3, 0.5, 0.8, 0.9, 1, 1.4, 1.5, 2, 2.2, 2.5, 3, 4,
+		5, 6, 7, 8
+	])('it should merge polygons with radius: %d and 24 steps', (radius) => {
+		const list = buildPolyCircle(radius, 24)(data);
+		const collection = featureCollection(list);
+		const result = polyunion(collection, 4);
 
-			expect(result.features).not.toHaveLength(list.length);
-		});
-
+		expect(result.features).not.toHaveLength(list.length);
+	});
 });
