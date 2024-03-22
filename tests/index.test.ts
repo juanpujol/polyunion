@@ -1,8 +1,13 @@
-import { polyunion } from './index';
+import { polyunion } from '../src/index';
 import { describe, expect, it } from 'vitest';
-import { polygon } from '@turf/helpers';
+import turfCircle from '@turf/circle';
+import { featureCollection, polygon } from '@turf/helpers';
+import { data } from './fixtures/data.json';
 
 import type { FeatureCollection, Polygon } from '@turf/helpers';
+
+// Temp
+import fs from 'fs';
 
 describe('polyunion function', () => {
 	it('handles an empty feature collection', () => {
@@ -134,4 +139,35 @@ describe('polyunion function', () => {
 			]
 		]);
 	});
+
+	it.each([
+			0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 2, 2.2, 2.3, 2.5, 3, 4,
+			5, 6, 7, 8, 9, 10
+		])('it should merge polygons with radius: %d and 24 steps', (radius) => {
+			const list = buildPolyCircle(radius, 24)(data);
+			const collection = featureCollection(list);
+			const result = polyunion(collection, 4);
+
+			expect(result.features).not.toHaveLength(list.length);
+
+			fs.writeFileSync(`./tests/output/polyunion-${radius}.json`, JSON.stringify(result, null, 2));
+		});
+
 });
+
+function buildPolyCircle(radioMiles: number, steps: number) {
+	const val = (n: string | number) => (typeof n === 'number' ? n : +n);
+
+	return <T extends { lat: string | number; lng: string | number }>(list: T[]) => {
+		const radiusInKm = radioMiles * 1.609344;
+
+		return list.map(({ lat: lat, lng: lon }) =>
+			turfCircle([val(lon), val(lat)], radiusInKm, {
+				steps,
+				properties: {
+					center: [val(lon), val(lat)],
+				}
+			})
+		);
+	};
+}

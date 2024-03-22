@@ -13,6 +13,6 @@
 		"noEmit": true,
 		"outDir": "dist"
 	},
-	"include": ["src"],
+	"include": ["src", "tests/index.test.ts"],
 	"exclude": ["node_modules"]
 }
