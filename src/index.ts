@@ -82,16 +82,22 @@ function polyunionPass(
 
 			const targetFeature = fc.features[candidate.id];
 
-			if (
-				intersect(mergeCandidate, targetFeature) ||
-				booleanOverlap(mergeCandidate, targetFeature)
-			) {
-				mergeCandidate = union(mergeCandidate, targetFeature) as Feature<Polygon>;
-				processed.add(candidate.id);
+			// Attempt to merge the two features if they intersect or overlap
+			try {
+				if (
+					intersect(mergeCandidate, targetFeature) ||
+					booleanOverlap(mergeCandidate, targetFeature)
+				) {
+					mergeCandidate = union(mergeCandidate, targetFeature) as Feature<Polygon>;
+					processed.add(candidate.id);
+				}
+			} catch (err) {
+				console.error('Polyunion error =>', err);
 			}
 		});
 
 		mergedFeatures.push(mergeCandidate);
+
 		processed.add(index);
 	});
 
