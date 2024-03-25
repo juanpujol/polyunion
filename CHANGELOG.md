@@ -6,7 +6,7 @@
 
 ### Fixes 🐞
 
-- Fixes bug were turf intersect will throw an error that should't break the function response. #10 - Thanks ♥️ https://github.com/AbraaoAlves and https://github.com/lamartinecabral
+- Fixes bug were turf intersect will throw an error that should't break the function response. #10 - Thanks ♥️ @AbraaoAlves and @lamartinecabral
 
 ## v0.1.2 (2024-03-12)
 
